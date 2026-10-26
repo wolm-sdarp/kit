@@ -1,7 +1,7 @@
 # Maths {#sec-debug-maths}
 
-{{< include ../../../../shared/includes/math-symbols.qmd >}}
- 
+{{< include /_extensions/wolm-sdarp/wolm-sdarp/shared/math/math-symbols.qmd >}}
+
 ### Блоки {#debug-maths-blocks}
 
 Кроссреф см. тут: @sec-debug-crossref.

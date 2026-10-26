@@ -29,7 +29,7 @@ sample(x = 1:7, size = n_col * n_row, replace = TRUE) %>% # <3>
             mean = mean(value), # <8>
             sd = sd(value), # <8>
             skew = psych::skew(value), # <8>
-            kurt = psych::kurtos(value) - 3, # <8>
+            kurt = psych::kurtosi(value), # <8>
             .by = group) %>% # <8>
   mutate(across(is.numeric, round, digits = 2)) # <9>
 ```
@@ -83,7 +83,7 @@ sample(x = 1:7, size = n_col * n_row, replace = TRUE) %>% # <3>
             mean = mean(value), # <8>
             sd = sd(value), # <8>
             skew = psych::skew(value), # <8>
-            kurt = psych::kurtosi(value) - 3, # <8>
+            kurt = psych::kurtosi(value), # <8>
             .by = group) %>% # <8>
   mutate(across(is.numeric, round, digits = 2)) %>% # <9>
   knitr::kable() # <10>
