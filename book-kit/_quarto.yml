@@ -1,10 +1,14 @@
 project:
   type: book
+  output-dir: _book
+
+lang: ru
 
 book:
-  title: "book-kit"
-  author: "Norah Jones"
-  date: "10/26/2026"
+  title: "Style Kit: Book"
+  subtitle: "Create & Debug Style"
+  author: "A. N. Angelgardt"
+  date: today
   chapters:
     - index.qmd
     - intro.qmd
@@ -18,8 +22,7 @@ format:
     theme:
       - cosmo
       - brand
-  pdf:
-    documentclass: scrreprt
+
 
 
 

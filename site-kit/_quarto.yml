@@ -1,8 +1,11 @@
 project:
   type: website
+  output-dir: _site
+
+lang: ru
 
 website:
-  title: "site-kit"
+  title: "Styke Kit: Site"
   navbar:
     left:
       - href: index.qmd
