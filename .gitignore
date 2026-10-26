@@ -2,7 +2,10 @@
 .Rhistory
 .RData
 .Ruserdata
+.Rprofile
 *.Rproj
+
+renv/
 
 _book/
 _site/
@@ -11,5 +14,6 @@ _site/
 *_cache/
 _freeze/
 .DS_Store
-_extensions
+/book-kit/_extensions
+/site-kit/_extensions
 

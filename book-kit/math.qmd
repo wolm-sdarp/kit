@@ -1,0 +1,164 @@
+# Maths {#sec-debug-maths}
+
+{{< include ../../../../shared/includes/math-symbols.qmd >}}
+ 
+### Блоки {#debug-maths-blocks}
+
+Кроссреф см. тут: @sec-debug-crossref.
+
+$$
+y = kx + b
+$${#eq-debug}
+
+:::{#thm-debug}
+Это теорема.
+:::
+
+:::{.proof}
+Это доказательство.
+:::
+
+:::{#lem-debug}
+Это лемма.
+:::
+
+:::{#cor-debug}
+Это следствие.
+:::
+
+:::{#prp-debug}
+Это утверждение (предложение).
+:::
+
+:::{#cnj-debug}
+Это гипотеза (предположение).
+:::
+
+:::{#def-debug}
+Это определение.
+:::
+
+:::{#exm-debug}
+Это пример.
+:::
+
+:::{#exr-debug}
+Это упражнение (задание).
+:::
+
+:::{.solution}
+Это ненумерованное решение.
+:::
+
+:::{#sol-debug}
+(к задаче)
+
+Это нумерованное решение.
+:::
+
+:::{#sol-debug-fold .folded}
+(к задаче)
+
+Это нумерованное решение для дебага скрытия.
+:::
+
+:::{#sol-debug-code .folded}
+(к задаче)
+
+Это нумерованное решение с кодом.
+
+```{r}
+8 + 12
+```
+
+:::
+
+:::{#sol-debug-code-pic .folded}
+(к задаче)
+
+Это нумерованное решение с кодом и графиком.
+
+```{r}
+plot(1:10, 10:1)
+```
+
+:::
+
+:::{.remark}
+Это ненумерованное замечание.
+:::
+
+:::{#rem-debug}
+Это нумерованное замечание.
+:::
+
+:::{#alg-debug}
+Это алгоритм.
+:::
+
+### Кастомные символы (includes) {#debug-maths-includes}
+
+Это inline-формула с кастомными символами: $f(x) \defin{=} g(x) \toas h(x)$, которая сама по себе совершенно ничего не значит.
+
+$$
+\circled{2} : \expect (X) \underset{\boxed{1}}{\defin{=}} \int_{-\infty}^{+\infty} x \dens{X} (x) \, dx
+$$
+
+$$
+\varphi \, \bs{\varphi} \, a \, \bs{a} \, \mathrm{a} \, \mathbf{a}
+$$
+
+$$
+\frac{\d f}{\d x} \, i \, \i \, e \, \e \quad \uppi \, \pi \, \upalpha \, \alpha
+$$
+
+$$
+\dens{\normm}(x | \mu, \sigma) = \frac{1}{\sqrt{2 \uppi} \, \sigma} \e^{-\tfrac{(x - \mu)^2}{2\sigma^2}}
+$$
+
+$$
+\mbb{P}(x) \quad \mcal{D}(x) \quad \msf{p} \quad \mrm{P}
+$$
+
+$$
+\setN \quad 
+\setNo \quad 
+\setZ \quad 
+\setQ \quad 
+\setI \quad 
+\setR \quad 
+\setC \quad 
+\setIm
+$$
+
+$$
+x_i^m \quad x_1\ip{m} \quad x_k\ib{m}
+$$
+
+$$
+\seq{x}{n} \quad \seqq{x}{k_n} \quad \seqq[m]{x}{k_n}
+$$
+
+$$
+\norm{\mu}{\sigma^2}, \,\, \pois{\lambda}
+$$
+
+$$
+\intoo{\frac{1}{a}}{\frac{1}{2b}} \quad \intco{-\frac{2c}{a}}{\frac{2c}{3b}}
+$$
+
+$$
+\begin{bmatrix}
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+\end{bmatrix}
+\qquad
+\begin{pmatrix}
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+a & a & \ldots & a \\
+\end{pmatrix}
+$$

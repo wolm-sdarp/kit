@@ -1,0 +1,52 @@
+// Теоремы, доказательства, решения, свёрнутый код, введение, цитаты.
+
+// Рамка для теорем и доказательств
+.theorem, .proof {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding: .5rem;
+}
+
+// Свёрнутое решение: подпись берётся из wolm.strings.solution-toggle (CSS-переменная)
+.solution.folded {
+  p:first-child::after {
+    content: var(--wolm-solution-toggle);
+    float: right;
+  }
+}
+
+// Уменьшенная подпись у свёрнутого кода
+div.cell div[data-code-fold="true"] {
+  figcaption.quarto-float-lst {
+    font-size: .7em;
+  }
+  summary {
+    font-size: .7em;
+  }
+}
+
+// Введение к главе
+.intro {
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: solid 1px;
+}
+
+// Цитата с подписью
+div.blockquote {
+  padding: .625rem 1.25rem;
+  border-left-width: .25rem;
+  border-left-style: solid;
+  blockquote.blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: right;
+    ::before {
+      content: "— ";
+    }
+  }
+}

@@ -1,0 +1,45 @@
+# WoLM SDARP — бренд, тёмная тема.
+# Палитра должна совпадать с html/scss/dark.scss (проверка: scripts/check-palette.R).
+meta:
+  name: WoLM SDARP
+color:
+  palette:
+    white:  "#fdfdfd"
+    black:  "#050505"
+    blue:   "#4a88b5"
+    indigo: "#7b73e0"
+    purple: "#a585d0"
+    pink:   "#e07a99"
+    red:    "#d95a4e"
+    orange: "#e07a45"
+    yellow: "#c4a030"
+    green:  "#3cb08f"
+    teal:   "#35aeb3"
+    cyan:   "#5ab4e0"
+    wine:   "#a84559"
+    brown:  "#a07a6a"
+    slate:  "#8a9ea8"
+    blue-soft:   "#245a73"
+    indigo-soft: "#3a358a"
+    purple-soft: "#4d3385"
+    pink-soft:   "#963050"
+    red-soft:    "#8a2a1e"
+    orange-soft: "#8a3a1c"
+    yellow-soft: "#7a5c15"
+    green-soft:  "#206b52"
+    teal-soft:   "#206b6f"
+    cyan-soft:   "#2a5a8a"
+    wine-soft:   "#7a2538"
+    brown-soft:  "#6b4535"
+    slate-soft:  "#4a5f6b"
+  background: "#212529"
+  foreground: white
+  primary: blue
+  success: green
+  info: cyan
+  warning: yellow
+  danger: red
+typography:
+  base: Open Sans
+  headings: Montserrat
+  monospace: Source Code Pro

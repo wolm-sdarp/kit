@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: _book
+  preview:
+    port: 5051
 
 lang: ru
 
@@ -9,20 +11,51 @@ book:
   subtitle: "Create & Debug Style"
   author: "A. N. Angelgardt"
   date: today
+  favicon: img/favicon.png
+  navbar:
+    left:
+      - text: "Book0"
+        href: ""
+      - text: "BookI"
+        href: ""
+      - text: "BookII"
+        href: ""
+      - text: "BookIII"
+        href: ""
+      - text: "Tests"
+        href: ""
+    right:
+      - text: "Annexes"
+        href: ""
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+    - part: part.qmd
+      chapters:
+        - text.qmd
+        - level-labs.qmd
+        - callouts.qmd
+    - code.qmd
+    - math.qmd
+    - figures.qmd
     - references.qmd
+  appendices:
+    - apx.qmd
 
 bibliography: references.bib
 
+# ── WoLM SDARP style kit ──
+# Расширение подключено симлинком book-kit/_extensions -> ../_extensions (scripts/link-ext.sh).
+# Бренд нельзя подключить из расширения в проекте-книге (Quarto 1.9.37), поэтому — здесь.
+brand:
+  light: _extensions/wolm-sdarp/wolm-sdarp/brand/light.yml
+  dark: _extensions/wolm-sdarp/wolm-sdarp/brand/dark.yml
+
+language: _extensions/wolm-sdarp/wolm-sdarp/shared/lang/_lang-ru.yml
+metadata-files:
+  - _extensions/wolm-sdarp/wolm-sdarp/shared/lang/_meta-ru.yml
+
+wolm:
+  level-filter: true   # стенд: проверяем фильтр разделов по уровням
+
 format:
-  html:
-    theme:
-      - cosmo
-      - brand
-
-
-
-
+  wolm-sdarp-html: default

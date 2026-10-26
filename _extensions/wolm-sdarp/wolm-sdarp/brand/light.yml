@@ -1,0 +1,48 @@
+# WoLM SDARP — бренд, светлая тема.
+# Палитра должна совпадать с html/scss/light.scss (проверка: scripts/check-palette.R).
+meta:
+  name: WoLM SDARP
+color:
+  palette:
+    white:  "#fdfdfd"
+    black:  "#050505"
+    blue:   "#2a5c82"   # основной: глубокий морской синий
+    indigo: "#5a4fcf"   # теоретические блоки, формулы
+    purple: "#8565b0"   # когнитивные/нейро-темы
+    pink:   "#d45b7c"   # эмоциональные/соц. исследования
+    red:    "#c23a2e"   # критические предупреждения, ошибки
+    orange: "#c45a20"   # гипотезы, акцентные заметки
+    yellow: "#9e7d0a"   # тёмное золото: рекомендации, лайфхаки
+    green:  "#1e8a6e"   # успех, практика
+    teal:   "#1b8a8f"   # нейтральные акценты, медиация
+    cyan:   "#3491c7"   # ссылки, инфо-блоки, интерактив
+    wine:   "#6b1d2e"   # клинические разделы, акцентные предупреждения
+    brown:  "#7a5647"   # цитаты, исторические справки
+    slate:  "#5f7480"   # рамки, иллюстрации
+    blue-soft:   "#93c5fd"
+    indigo-soft: "#a5b4fc"
+    purple-soft: "#d8b4fe"
+    pink-soft:   "#f9a8d4"
+    red-soft:    "#fca5a5"
+    orange-soft: "#fdba74"
+    yellow-soft: "#fef08a"
+    green-soft:  "#6ee7b7"
+    teal-soft:   "#5eead4"
+    cyan-soft:   "#7dd3fc"
+    wine-soft:   "#f0b4c4"
+    brown-soft:  "#d7c0b0"
+    slate-soft:  "#cbd5e1"
+  background: "#f8f9fa"
+  foreground: black
+  primary: blue
+  success: green
+  info: cyan
+  warning: yellow
+  danger: red
+typography:
+  # Только назначение семейств. Источники шрифтов: HTML — Google Fonts + локальный запас
+  # (fonts/web), Typst — fonts/ttf. Список `fonts:` с `source: google` не использовать:
+  # для Typst он скачивает только латиницу и падает без сети (см. log.md).
+  base: Open Sans
+  headings: Montserrat
+  monospace: Source Code Pro
