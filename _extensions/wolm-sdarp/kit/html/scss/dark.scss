@@ -6,15 +6,18 @@
 
 /*-- scss:defaults --*/
 
-// Grayscale
+// Grayscale (шкала перевёрнута: $gray-100 — самый тёмный, $gray-900 — самый светлый)
+// $gray-300, $gray-500, $gray-600, $gray-800 и $border-color — без !default: Quarto 1.9.37 объявляет
+// их (с !default) в своём разделе 'functions', который идёт раньше наших defaults, поэтому
+// значение с !default здесь игнорируется.
 $white:    #fdfdfd !default;
 $gray-900: #f8f9fa !default;  // фон секций
-$gray-800: #e9ecef !default;  // границы, разделители
+$gray-800: #e9ecef;  // границы, разделители
 $gray-700: #dee2e6 !default;  // неактивные элементы
-$gray-600: #ced4da !default;  // плейсхолдеры, disabled
-$gray-500: #adb5bd !default;  // второстепенный текст
+$gray-600: #ced4da;  // плейсхолдеры, disabled
+$gray-500: #adb5bd;  // второстепенный текст
 $gray-400: #6c757d !default;  // подписи, мета-информация
-$gray-300: #495057 !default;  // основной текст (альтернатива)
+$gray-300: #495057;  // основной текст (альтернатива)
 $gray-200: #343a40 !default;  // заголовки
 $gray-100: #212529 !default;  // основной текст
 $black:    #050505 !default;
@@ -50,6 +53,15 @@ $brown-soft: #6b4535 !default;
 $slate-soft: #4a5f6b !default;
 
 // Page elements
+// Рамки (колауты, таблицы, вкладки): 15 % цвета текста поверх фона — как Quarto делает по умолчанию
+$border-color: mix($white, $gray-100, 15%);
+// Bootstrap берёт «акцентный» цвет текста (активная вкладка и др.) из $black — в тёмной теме это светлый
+$emphasis-color: $white !default;
+$nav-tabs-link-active-color: $white !default;
+$nav-tabs-link-active-bg: $gray-100 !default;
+$nav-tabs-border-color: $border-color !default;
+$nav-tabs-link-hover-border-color: $border-color $border-color transparent !default;
+$nav-tabs-link-active-border-color: $border-color $border-color transparent !default;
 $navbar-bg: $black !default;
 $navbar-fg: $gray-900 !default;
 

@@ -54,9 +54,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-heading;
 }
 
-h1::first-letter {
-  text-transform: uppercase;
-}
+// Заглавная первая буква в заголовках h1 — в shared/filters/wolm.lua (wolm.capitalize-h1),
+// а не через h1::first-letter: CSS не отличает код в начале заголовка (`lm()` → `Lm()`).
 
 @import "partials/labels";
 @import "partials/elements";

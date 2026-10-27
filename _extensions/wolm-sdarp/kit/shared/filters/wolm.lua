@@ -1,14 +1,14 @@
 --[[
   WoLM SDARP — фильтр расширения.
 
-  Читает метаданные `wolm` (значения по умолчанию — в _extension.yml) и для HTML:
+  Читает метаданные `wolm` (значения по умолчанию — в _extension.yml).
+
+  Только HTML (заглавная буква в h1 — отдельный фильтр capitalize.lua):
     * подключает Google Fonts (wolm.fonts: google) — или не подключает (local);
     * всегда подключает локальную копию шрифтов (fonts/web) как запасной вариант;
     * задаёт CSS-переменные с текстами лейблов уровней и служебных подписей
       (--wolm-lab-*, --wolm-solution-toggle, --wolm-level-filter-label);
     * подключает фильтр разделов по уровням (wolm.level-filter: true).
-
-  Для Typst фильтр пока ничего не делает (формат зарезервирован).
 ]]
 
 local GOOGLE_FONTS = [[
@@ -36,9 +36,12 @@ local function html_escape(s)
   return (s:gsub("&", "&amp;"):gsub("<", "&lt;"):gsub(">", "&gt;"))
 end
 
-function Meta(meta)
+
+-- ── HTML: шрифты, тексты для CSS, фильтр уровней ────────────────────────
+
+local function html_meta(meta)
   if not quarto.doc.is_format("html") then
-    return meta
+    return nil
   end
 
   local w = meta.wolm or {}
@@ -91,3 +94,7 @@ function Meta(meta)
 
   return meta
 end
+
+return {
+  { Meta = html_meta },
+}

@@ -7,15 +7,18 @@
 /*-- scss:defaults --*/
 
 // Grayscale
+// $gray-300, $gray-500, $gray-600, $gray-800 и $border-color — без !default: Quarto 1.9.37 объявляет
+// их (с !default) в своём разделе 'functions', который идёт раньше наших defaults, поэтому
+// значение с !default здесь игнорируется.
 $white:    #fdfdfd !default;
 $gray-100: #f8f9fa !default;  // фон секций
 $gray-200: #e9ecef !default;  // границы, разделители
-$gray-300: #dee2e6 !default;  // неактивные элементы
+$gray-300: #dee2e6;  // неактивные элементы
 $gray-400: #ced4da !default;  // плейсхолдеры, disabled
-$gray-500: #adb5bd !default;  // второстепенный текст
-$gray-600: #6c757d !default;  // подписи, мета-информация
+$gray-500: #adb5bd;  // второстепенный текст
+$gray-600: #6c757d;  // подписи, мета-информация
 $gray-700: #495057 !default;  // основной текст (альтернатива)
-$gray-800: #343a40 !default;  // заголовки
+$gray-800: #343a40;  // заголовки
 $gray-900: #212529 !default;  // основной текст
 $black:    #050505 !default;
 
@@ -50,6 +53,7 @@ $brown-soft: #d7c0b0 !default;
 $slate-soft: #cbd5e1 !default;
 
 // Page elements
+$border-color: $gray-300;
 $navbar-bg: $black !default;
 $navbar-fg: $gray-100 !default;
 

@@ -35,7 +35,14 @@ div.cell div[data-code-fold="true"] {
   border-bottom: solid 1px;
 }
 
-// Цитата с подписью
+// Цитата с подписью. Разметка:
+//   :::{.blockquote}
+//   Текст цитаты (один или несколько абзацев).
+//
+//   > Имя Фамилия. [Источник, год]
+//   :::
+// Подпись — вложенная цитата `>`: выравнивается вправо, перед ней одно тире.
+// Тире одинаковое для всех языков, поэтому задано здесь, а не в метаданных.
 div.blockquote {
   padding: .625rem 1.25rem;
   border-left-width: .25rem;
@@ -45,7 +52,7 @@ div.blockquote {
     padding: 0;
     border: 0;
     text-align: right;
-    ::before {
+    > :first-child::before {
       content: "— ";
     }
   }

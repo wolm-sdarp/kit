@@ -8,6 +8,8 @@ contributes:
     common:
       csl: shared/refs/apa.csl
       filters:
+        - path: shared/filters/capitalize.lua
+          at: pre-quarto
         - shared/filters/wolm.lua
       crossref:
         chapters: true
@@ -45,6 +47,7 @@ contributes:
       wolm:
         fonts: google          # google | local
         level-filter: false    # true — кнопки фильтра разделов по уровням
+        capitalize-h1: true    # заглавная первая буква в h1 и в title (код и цифры не трогаются)
         labs:
           novice: "Novice"
           junior: "Junior"
