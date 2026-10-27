@@ -1,42 +1,48 @@
 # WoLM SDARP Style Kit
 
-Стилевой комплект проекта WoLM SDARP в виде Quarto extension `wolm-sdarp`. Плюс два тестовых стенда: книга `book-kit` и сайт `site-kit`.
+Стилевой комплект проекта WoLM SDARP в виде Quarto extension `kit`. Плюс два тестовых стенда: книга `book-kit` и сайт `site-kit`.
 
 > Quarto: **≥ 1.9.37** (проверено на 1.9.37).
-> Статус: `0.1.0-dev`, только HTML. Typst зарезервирован (`_extensions/wolm-sdarp/wolm-sdarp/typst/README.md`).
+> Статус: `0.1.0-dev`, только HTML. Typst зарезервирован (`_extensions/wolm-sdarp/kit/typst/README.md`).
 
 ## Подключение к книге или сайту
 
 ```bash
-quarto add wolm-sdarp/kit            # позже — с тегом: wolm-sdarp/kit@v0.1.0
+quarto add wolm-sdarp/kit@v0.1.0     # конкретный релиз (тег) — рекомендуется
+quarto add wolm-sdarp/kit@master     # текущее состояние ветки master
 ```
 
-Расширение установится в `_extensions/wolm-sdarp/wolm-sdarp/`: Quarto кладёт расширения из GitHub в `_extensions/<владелец>/<имя>`. В `_quarto.yml` проекта:
+Версию нужно указывать всегда:
+
+- без `@…` Quarto 1.9.37 качает ветку `main`, а её в репозитории нет — основная ветка называется `master`;
+- ветки с `/` в имени (`feature/…`) так поставить не получится: судя по коду Quarto, он ищет в архиве папку `kit-feature/…`, а GitHub называет её `kit-feature-…`.
+
+Расширение установится в `_extensions/wolm-sdarp/kit/`: Quarto кладёт расширения из GitHub в `_extensions/<владелец>/<имя>`. В `_quarto.yml` проекта:
 
 ```yaml
 # Бренд подключается здесь: в проектах-книгах Quarto 1.9.37 не применяет бренд из расширения
 brand:
-  light: _extensions/wolm-sdarp/wolm-sdarp/brand/light.yml
-  dark: _extensions/wolm-sdarp/wolm-sdarp/brand/dark.yml
+  light: _extensions/wolm-sdarp/kit/brand/light.yml
+  dark: _extensions/wolm-sdarp/kit/brand/dark.yml
 
 # Язык интерфейса и тексты kit (ru | rd)
-language: _extensions/wolm-sdarp/wolm-sdarp/shared/lang/_lang-ru.yml
+language: _extensions/wolm-sdarp/kit/shared/lang/_lang-ru.yml
 metadata-files:
-  - _extensions/wolm-sdarp/wolm-sdarp/shared/lang/_meta-ru.yml
+  - _extensions/wolm-sdarp/kit/shared/lang/_meta-ru.yml
 
 format:
-  wolm-sdarp-html: default
+  kit-html: default
 ```
 
 Общие LaTeX-макросы для формул подключаются в главе:
 
 ```markdown
-{{< include /_extensions/wolm-sdarp/wolm-sdarp/shared/math/math-symbols.qmd >}}
+{{< include /_extensions/wolm-sdarp/kit/shared/math/math-symbols.qmd >}}
 ```
 
-Обновление: `quarto update wolm-sdarp/kit`.
+Обновление — тоже с версией: `quarto update wolm-sdarp/kit@v0.1.1`.
 
-## Что даёт формат `wolm-sdarp-html`
+## Что даёт формат `kit-html`
 
 - Светлая и тёмная темы (палитра, серые, навбар, колауты, лейблы уровней).
 - Шрифты: Montserrat (заголовки), Open Sans (текст), Source Code Pro (код).
@@ -72,8 +78,8 @@ format:
 ## Устройство расширения
 
 ```
-_extensions/wolm-sdarp/wolm-sdarp/
-├── _extension.yml        # формат wolm-sdarp-html (common + html), заготовка typst
+_extensions/wolm-sdarp/kit/
+├── _extension.yml        # формат kit-html (common + html), заготовка typst
 ├── brand/                # light.yml, dark.yml — палитра, фон/текст, шрифты (для HTML и Typst)
 ├── html/
 │   ├── scss/             # light.scss, dark.scss — переменные тем; common.scss — общее

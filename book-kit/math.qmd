@@ -1,6 +1,6 @@
 # Maths {#sec-debug-maths}
 
-{{< include /_extensions/wolm-sdarp/wolm-sdarp/shared/math/math-symbols.qmd >}}
+{{< include /_extensions/wolm-sdarp/kit/shared/math/math-symbols.qmd >}}
 
 ### Блоки {#debug-maths-blocks}
 

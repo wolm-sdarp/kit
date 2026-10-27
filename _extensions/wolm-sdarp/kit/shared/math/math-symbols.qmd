@@ -1,5 +1,5 @@
 <!-- WoLM SDARP — общие LaTeX-макросы для формул.
-     Подключение в главе: {{< include /_extensions/wolm-sdarp/wolm-sdarp/shared/math/math-symbols.qmd >}}
+     Подключение в главе: {{< include /_extensions/wolm-sdarp/kit/shared/math/math-symbols.qmd >}}
      Pandoc разворачивает \newcommand сам (расширение latex_macros), поэтому макросы
      работают в HTML (MathJax) и будут работать в Typst. -->
 

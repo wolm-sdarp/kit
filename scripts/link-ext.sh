@@ -15,7 +15,7 @@ for stand in book-kit site-kit; do
     echo "$target: существует и не является ссылкой — обновляю копию"
     rm -rf "$target"
   fi
-  if ln -s ../_extensions "$target" 2>/dev/null && [ -d "$target/wolm-sdarp/wolm-sdarp" ]; then
+  if ln -s ../_extensions "$target" 2>/dev/null && [ -d "$target/wolm-sdarp/kit" ]; then
     echo "$target -> ../_extensions"
   else
     rm -f "$target"

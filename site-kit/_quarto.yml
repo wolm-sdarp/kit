@@ -18,13 +18,13 @@ website:
 # ── WoLM SDARP style kit ──
 # Расширение подключено симлинком site-kit/_extensions -> ../_extensions (scripts/link-ext.sh).
 brand:
-  light: _extensions/wolm-sdarp/wolm-sdarp/brand/light.yml
-  dark: _extensions/wolm-sdarp/wolm-sdarp/brand/dark.yml
+  light: _extensions/wolm-sdarp/kit/brand/light.yml
+  dark: _extensions/wolm-sdarp/kit/brand/dark.yml
 
-language: _extensions/wolm-sdarp/wolm-sdarp/shared/lang/_lang-ru.yml
+language: _extensions/wolm-sdarp/kit/shared/lang/_lang-ru.yml
 metadata-files:
-  - _extensions/wolm-sdarp/wolm-sdarp/shared/lang/_meta-ru.yml
+  - _extensions/wolm-sdarp/kit/shared/lang/_meta-ru.yml
 
 format:
-  wolm-sdarp-html:
+  kit-html:
     css: styles.css

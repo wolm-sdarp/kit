@@ -47,15 +47,15 @@ bibliography: references.bib
 # Расширение подключено симлинком book-kit/_extensions -> ../_extensions (scripts/link-ext.sh).
 # Бренд нельзя подключить из расширения в проекте-книге (Quarto 1.9.37), поэтому — здесь.
 brand:
-  light: _extensions/wolm-sdarp/wolm-sdarp/brand/light.yml
-  dark: _extensions/wolm-sdarp/wolm-sdarp/brand/dark.yml
+  light: _extensions/wolm-sdarp/kit/brand/light.yml
+  dark: _extensions/wolm-sdarp/kit/brand/dark.yml
 
-language: _extensions/wolm-sdarp/wolm-sdarp/shared/lang/_lang-ru.yml
+language: _extensions/wolm-sdarp/kit/shared/lang/_lang-ru.yml
 metadata-files:
-  - _extensions/wolm-sdarp/wolm-sdarp/shared/lang/_meta-ru.yml
+  - _extensions/wolm-sdarp/kit/shared/lang/_meta-ru.yml
 
 wolm:
   level-filter: true   # стенд: проверяем фильтр разделов по уровням
 
 format:
-  wolm-sdarp-html: default
+  kit-html: default

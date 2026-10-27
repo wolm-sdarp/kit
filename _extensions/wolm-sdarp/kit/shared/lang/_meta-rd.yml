@@ -1,5 +1,5 @@
 # WoLM SDARP — тексты kit для дореформенной локали (rd = ru-petr1708).
-# Подключение: metadata-files: [_extensions/wolm-sdarp/wolm-sdarp/shared/lang/_meta-rd.yml]
+# Подключение: metadata-files: [_extensions/wolm-sdarp/kit/shared/lang/_meta-rd.yml]
 wolm:
   labs:
     novice: "Ищущій Свѣта"

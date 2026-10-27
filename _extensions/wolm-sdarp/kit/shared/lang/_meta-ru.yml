@@ -1,5 +1,5 @@
 # WoLM SDARP — тексты kit для русской локали (ru).
-# Подключение в книге/сайте: metadata-files: [_extensions/wolm-sdarp/wolm-sdarp/shared/lang/_meta-ru.yml]
+# Подключение в книге/сайте: metadata-files: [_extensions/wolm-sdarp/kit/shared/lang/_meta-ru.yml]
 wolm:
   labs:
     novice: "Novice"

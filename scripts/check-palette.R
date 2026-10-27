@@ -4,7 +4,7 @@
 # недоступны), brand.yml — Typst и шорткоду {{< brand color … >}}. См. log.md.
 # Запуск из корня kit: Rscript scripts/check-palette.R
 
-ext <- file.path("_extensions", "wolm-sdarp", "wolm-sdarp")
+ext <- file.path("_extensions", "wolm-sdarp", "kit")
 
 read_brand_palette <- function(path) {
   x <- readLines(path, warn = FALSE, encoding = "UTF-8")

@@ -6,7 +6,7 @@
 
 ### Added
 
-- Расширение `wolm-sdarp` (`_extensions/wolm-sdarp/wolm-sdarp/`) с форматом `wolm-sdarp-html` для книг и сайтов.
+- Расширение `kit` (`_extensions/wolm-sdarp/kit/`) с форматом `kit-html` для книг и сайтов.
 - Бренд `brand/light.yml` и `brand/dark.yml`: палитра из 28 цветов, фон и текст, семантические цвета, назначение шрифтов.
 - Темы `html/scss/light.scss` и `dark.scss`, общая часть `common.scss`, частичные файлы `labels`, `elements`, `callouts`, `level-filter`.
 - Lua-фильтр `shared/filters/wolm.lua`:
@@ -23,7 +23,8 @@
 
 ### Changed
 
-- Стенды `book-kit` и `site-kit` переведены на формат `wolm-sdarp-html`. Настройки, которые теперь даёт расширение (CSL, crossref, тема), из `_quarto.yml` стендов убраны.
+- Расширение переименовано до релиза: `wolm-sdarp` → `kit`. Путь установки `_extensions/wolm-sdarp/wolm-sdarp/` → `_extensions/wolm-sdarp/kit/`, формат `wolm-sdarp-html` → `kit-html`. Команда установки не изменилась: `quarto add wolm-sdarp/kit@<версия>`.
+- Стенды `book-kit` и `site-kit` переведены на формат `kit-html`. Настройки, которые теперь даёт расширение (CSL, crossref, тема), из `_quarto.yml` стендов убраны.
 - `level-filter.js`: добавлен уровень Middle; подписи кнопок берутся из `wolm.labs`; работает только если на странице есть разделы с лейблами.
 
 ### Fixed
