@@ -1,0 +1,12 @@
+# WoLM SDARP — kit strings for the English locale (en).
+# Usage in a book/site: metadata-files: [_extensions/wolm-sdarp/kit/shared/lang/_meta-en.yml]
+wolm:
+  labs:
+    novice: "Novice"
+    junior: "Junior"
+    middle: "Middle"
+    senior: "Senior"
+    expert: "Expert"
+  strings:
+    solution-toggle: "Toggle"
+    level-filter-label: "Filter sections by level"
