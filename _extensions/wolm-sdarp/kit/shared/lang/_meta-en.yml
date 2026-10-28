@@ -8,7 +8,8 @@ wolm:
     senior: "Senior"
     expert: "Expert"
   strings:
-    solution-toggle: "Toggle"
+    solution-show: "Show"
+    solution-hide: "Hide"
     level-filter-label: "Filter sections by level"
     release-alpha: "This **alpha** version is under active development and may be unstable."
     release-beta: "This **beta** version is currently under testing and may contain incomplete content."

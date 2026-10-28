@@ -7,7 +7,7 @@
     * подключает Google Fonts (wolm.fonts: google) — или не подключает (local);
     * всегда подключает локальную копию шрифтов (fonts/web) как запасной вариант;
     * задаёт CSS-переменные с текстами лейблов уровней и служебных подписей
-      (--wolm-lab-*, --wolm-solution-toggle, --wolm-level-filter-label);
+      (--wolm-lab-*, --wolm-solution-show/hide, --wolm-level-filter-label);
     * подключает фильтр разделов по уровням (wolm.level-filter: true).
 ]]
 
@@ -77,7 +77,8 @@ local function html_meta(meta)
     local default = lvl:sub(1, 1):upper() .. lvl:sub(2)
     table.insert(vars, "--wolm-lab-" .. lvl .. ": " .. css_string(str(labs[lvl], default)) .. ";")
   end
-  table.insert(vars, "--wolm-solution-toggle: " .. css_string(str(strings["solution-toggle"], "")) .. ";")
+  table.insert(vars, "--wolm-solution-show: " .. css_string(str(strings["solution-show"], "Show")) .. ";")
+  table.insert(vars, "--wolm-solution-hide: " .. css_string(str(strings["solution-hide"], "Hide")) .. ";")
   table.insert(vars, "--wolm-level-filter-label: " ..
     css_string(str(strings["level-filter-label"], "Filter sections by level")) .. ";")
   quarto.doc.include_text("in-header",
