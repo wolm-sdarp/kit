@@ -1,0 +1,15 @@
+# WoLM SDARP — тексты kit для русской локали (ru).
+# Подключение в книге/сайте: metadata-files: [_extensions/wolm-sdarp/kit/shared/lang/_meta-ru.yml]
+wolm:
+  labs:
+    novice: "Novice"
+    junior: "Junior"
+    middle: "Middle"
+    senior: "Senior"
+    expert: "Expert"
+  strings:
+    solution-show: "Развернуть"
+    solution-hide: "Свернуть"
+    level-filter-label: "Фильтр разделов по уровню"
+    release-alpha: "Эта **альфа-версия** находится в процессе активной разработки и может быть нестабильной."
+    release-beta: "Эта **бета-версия** находится на стадии тестирования и вычитки, поэтому может содержать ошибки и неполный контент."

@@ -1,0 +1,147 @@
+// Колауты: правка иконки caution, шеврон для callout-none и кастомные колауты
+// (objectives, outcomes, history, person, dataset, myth, case — как классы на callout-note).
+// Цвета — $callout-color-* (light/dark.scss), иконки — $callout-icon-* (common.scss).
+
+
+.callout-caution > .callout-header > .callout-icon-container {
+    padding-top: .1em !important;
+}
+
+div.callout-none .callout-toggle::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{colorToRGB($body-color)}" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+}
+
+
+$callouts: (
+  "caution":
+    (
+      "parent": "none",
+      "color": $callout-color-caution,
+      "icon": $callout-icon-caution,
+    ),
+  "none":
+    (
+      "parent": "none",
+      "color": $callout-color-none,
+      "icon": $callout-icon-none,
+    ),
+  "objectives":
+    (
+      "parent": "note",
+      "color": $callout-color-objectives,
+      "icon": $callout-icon-objectives,
+    ),
+  "outcomes":
+    (
+      "parent": "note",
+      "color": $callout-color-outcomes,
+      "icon": $callout-icon-outcomes,
+    ),
+  "history":
+    (
+      "parent": "note",
+      "color": $callout-color-history,
+      "icon": $callout-icon-history,
+    ),
+  "person":
+    (
+      "parent": "note",
+      "color": $callout-color-person,
+      "icon": $callout-icon-person,
+    ),
+  "dataset":
+    (
+      "parent": "note",
+      "color": $callout-color-dataset,
+      "icon": $callout-icon-dataset,
+    ),
+  "myth":
+    (
+      "parent": "note",
+      "color": $callout-color-myth,
+      "icon": $callout-icon-myth,
+    ),
+  "case":
+    (
+      "parent": "note",
+      "color": $callout-color-case,
+      "icon": $callout-icon-case,
+    )
+);
+
+@each $name, $info in $callouts {
+  $shifted-color: #{shift-color(
+      quarto-map.get($info, "color"),
+      $callout-icon-scale
+    )};
+  $shifted-color-svg: str-replace($shifted-color, "#", "%23");
+
+  $parent: #{quarto-map.get($info, "parent")};
+
+  @if $parent == "none" {
+    div.callout-#{$name}.callout {
+      border-left-color: shift-color(
+        quarto-map.get($info, "color"),
+        $callout-border-scale
+      );
+    }
+
+    div.callout-#{$name}.callout-style-default > .callout-header {
+      background-color: shift-color(quarto-map.get($info, "color"), $callout-header-scale);
+    }
+
+    div.callout-#{$name}.callout-titled .callout-icon::before {
+      background-image: #{"url('data:image/svg+xml," +
+        str-replace(
+          quarto-map.get($info, "icon"),
+          'fill="currentColor"',
+          'style="fill: #{$shifted-color-svg}"'
+        ) +
+        "');"};
+    }
+
+    div.callout-#{$name}:not(.callout-titled) .callout-icon::before {
+    background-image: #{"url('data:image/svg+xml," +
+      str-replace(
+        quarto-map.get($info, "icon"),
+        'fill="currentColor"',
+        'style="fill: #{$shifted-color-svg}"'
+      ) +
+      "');"};
+    }
+  } @else {
+    div.callout-#{$parent}.#{$name}.callout {
+      border-left-color: shift-color(
+        quarto-map.get($info, "color"),
+        $callout-border-scale
+      );
+    }
+
+    div.callout-#{$parent}.#{$name}.callout-style-default > .callout-header {
+      background-color: shift-color(quarto-map.get($info, "color"), $callout-header-scale);
+    }
+
+    div.callout-#{$parent}.#{$name}.callout-titled .callout-icon::before {
+      background-image: #{"url('data:image/svg+xml," +
+        str-replace(
+          quarto-map.get($info, "icon"),
+          'fill="currentColor"',
+          'style="fill: #{$shifted-color-svg}"'
+        ) +
+        "');"};
+    }
+
+    div.callout-#{$parent}.#{$name}:not(.callout-titled) .callout-icon::before {
+    background-image: #{"url('data:image/svg+xml," +
+      str-replace(
+        quarto-map.get($info, "icon"),
+        'fill="currentColor"',
+        'style="fill: #{$shifted-color-svg}"'
+      ) +
+      "');"};
+    }
+  }
+}
+
+
+

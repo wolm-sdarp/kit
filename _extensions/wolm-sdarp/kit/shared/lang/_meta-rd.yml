@@ -1,0 +1,15 @@
+# WoLM SDARP — тексты kit для дореформенной локали (rd = ru-petr1708).
+# Подключение: metadata-files: [_extensions/wolm-sdarp/kit/shared/lang/_meta-rd.yml]
+wolm:
+  labs:
+    novice: "Ищущій Свѣта"
+    junior: "Ученикъ"
+    middle: "Подмастерье"
+    senior: "Мастеръ"
+    expert: "Наставникъ"
+  strings:
+    solution-show: "Развернуть"
+    solution-hide: "Свернуть"
+    level-filter-label: "Отборъ раздѣловъ по уровню"
+    release-alpha: "Эта **черновая редакція** обрѣтается въ процессѣ дѣятельной разработки и можетъ являться нестабильной."
+    release-beta: "Эта **корректурная редакція** проходитъ стадію вычитки и повѣрки, посему возможны опечатки и неокончательныя формулировки."

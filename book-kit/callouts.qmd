@@ -1,0 +1,636 @@
+# Callouts {#callouts}
+
+:::{.callout-note}
+Основной вид
+:::
+
+## Callouts {#sec-debug-callout}
+
+### Цветовая палитра колаутов
+::::{layout-ncol=3}
+
+:::{.callout-note}
+callout
+:::
+
+:::{.callout-tip}
+callout
+:::
+
+:::{.callout-warning}
+callout
+:::
+
+:::{.callout-caution}
+callout
+:::
+
+:::{.callout-important}
+callout
+:::
+
+:::{.callout-note .history}
+callout
+:::
+
+:::{.callout-note .person}
+callout
+:::
+
+:::{.callout-note .dataset}
+callout
+:::
+
+:::{.callout-note .myth}
+callout
+:::
+
+::::
+
+::::{layout-ncol=3}
+
+:::{.callout-note .case appearance="default"}
+callout
+:::
+
+:::{.callout appearance="default"}
+callout
+:::
+
+:::{.callout-note .objectives}
+callout
+:::
+
+::::
+
+
+### Стандартные колауты
+
+#### Notes {#debug-callout-note}
+
+Должен работать кроссреф на @nte-debug-id и @nte-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-note}
+Это заметка без заголовка и без id.
+:::
+
+:::{.callout-note #nte-debug-id}
+Это заметка без заголовка, но с id.
+:::
+
+:::{.callout-note title="Заголовок заметки"}
+Это заметка с заголовком, но без id.
+:::
+
+:::{.callout-note #nte-debug-title-id title="Заголовок заметки"}
+Это заметка с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-note-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-note appearance="default" collapse=false title="Заголовок заметки"}
+Это развернутая заметка с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note appearance="default" collapse=true title="Заголовок заметки"}
+Это свернутая заметка с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note appearance="simple" collapse=false title="Заголовок заметки"}
+Это развернутая заметка с заголовком в простом оформлении.
+:::
+
+:::{.callout-note appearance="simple" collapse=true title="Заголовок заметки"}
+Это свернутая заметка с заголовком в простом оформлении.
+:::
+
+:::{.callout-note appearance="minimal" collapse=false title="Заголовок заметки"}
+Это развернутая заметка с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-note appearance="minimal" collapse=true title="Заголовок заметки"}
+Это свернутая заметка с заголовком в минимальном оформлении.
+:::
+
+::::
+
+
+#### Tips {#debug-callout-tip}
+
+Должен работать кроссреф на @tip-debug-id и @tip-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-tip}
+Это совет без заголовка и без id.
+:::
+
+:::{.callout-tip #tip-debug-id}
+Это совет без заголовка, но с id.
+:::
+
+:::{.callout-tip title="Заголовок совета"}
+Это совет с заголовком, но без id.
+:::
+
+:::{.callout-tip #tip-debug-title-id title="Заголовок совета"}
+Это совет с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-tip-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-tip appearance="default" collapse=false title="Заголовок совета"}
+Это развернутый совет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-tip appearance="default" collapse=true title="Заголовок совета"}
+Это свернутый совет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-tip appearance="simple" collapse=false title="Заголовок совета"}
+Это развернутый совет с заголовком в простом оформлении.
+:::
+
+:::{.callout-tip appearance="simple" collapse=true title="Заголовок совета"}
+Это свернутый совет с заголовком в простом оформлении.
+:::
+
+:::{.callout-tip appearance="minimal" collapse=false title="Заголовок совета"}
+Это развернутый совет с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-tip appearance="minimal" collapse=true title="Заголовок совета"}
+Это свернутый совет с заголовком в минимальном оформлении.
+:::
+
+::::
+
+
+#### Warnings {#debug-callout-warning}
+
+Должен работать кроссреф на @wrn-debug-id и @wrn-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-warning}
+Это предупреждение без заголовка и без id.
+:::
+
+:::{.callout-warning #wrn-debug-id}
+Это предупреждение без заголовка, но с id.
+:::
+
+:::{.callout-warning title="Заголовок предупреждения"}
+Это предупреждение с заголовком, но без id.
+:::
+
+:::{.callout-warning #wrn-debug-title-id title="Заголовок предупреждения"}
+Это предупреждение с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-warning-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-warning appearance="default" collapse=false title="Заголовок предупреждения"}
+Это развернутое предупреждение с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-warning appearance="default" collapse=true title="Заголовок предупреждения"}
+Это свернутое предупреждение с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-warning appearance="simple" collapse=false title="Заголовок предупреждения"}
+Это развернутое предупреждение с заголовком в простом оформлении.
+:::
+
+:::{.callout-warning appearance="simple" collapse=true title="Заголовок предупреждения"}
+Это свернутое предупреждение с заголовком в простом оформлении.
+:::
+
+:::{.callout-warning appearance="minimal" collapse=false title="Заголовок предупреждения"}
+Это развернутое предупреждение с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-warning appearance="minimal" collapse=true title="Заголовок предупреждения"}
+Это свернутое предупреждение с заголовком в минимальном оформлении.
+:::
+
+::::
+
+
+#### Cautions {#debug-callout-caution}
+
+Должен работать кроссреф на @cau-debug-id и @cau-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-caution}
+Это предостережение без заголовка и без id.
+:::
+
+:::{.callout-caution #cau-debug-id}
+Это предостережение без заголовка, но с id.
+:::
+
+:::{.callout-caution title="Заголовок предостережения"}
+Это предостережение с заголовком, но без id.
+:::
+
+:::{.callout-caution #cau-debug-title-id title="Заголовок предостережения"}
+Это предостережение с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-caution-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-caution appearance="default" collapse=false title="Заголовок предостережения"}
+Это развернутое предостережение с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-caution appearance="default" collapse=true title="Заголовок предостережения"}
+Это свернутое предостережение с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-caution appearance="simple" collapse=false title="Заголовок предостережения"}
+Это развернутое предостережение с заголовком в простом оформлении.
+:::
+
+:::{.callout-caution appearance="simple" collapse=true title="Заголовок предостережения"}
+Это свернутое предостережение с заголовком в простом оформлении.
+:::
+
+:::{.callout-caution appearance="minimal" collapse=false title="Заголовок предостережения"}
+Это развернутое предостережение с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-caution appearance="minimal" collapse=true title="Заголовок предостережения"}
+Это свернутое предостережение с заголовком в минимальном оформлении.
+:::
+
+::::
+
+
+#### Important {#debug-callout-important}
+
+Должен работать кроссреф на @imp-debug-id и @imp-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-important}
+Это важность без заголовка и без id.
+:::
+
+:::{.callout-important #imp-debug-id}
+Это важность без заголовка, но с id.
+:::
+
+:::{.callout-important title="Заголовок важности"}
+Это важность с заголовком, но без id.
+:::
+
+:::{.callout-important #imp-debug-title-id title="Заголовок важности"}
+Это важность с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-important-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-important appearance="default" collapse=false title="Заголовок важности"}
+Это развернутая важность с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-important appearance="default" collapse=true title="Заголовок важности"}
+Это свернутая важность с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-important appearance="simple" collapse=false title="Заголовок важности"}
+Это развернутая важность с заголовком в простом оформлении.
+:::
+
+:::{.callout-important appearance="simple" collapse=true title="Заголовок важности"}
+Это свернутая важность с заголовком в простом оформлении.
+:::
+
+:::{.callout-important appearance="minimal" collapse=false title="Заголовок важности"}
+Это развернутая важность с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-important appearance="minimal" collapse=true title="Заголовок важности"}
+Это свернутая важность с заголовком в минимальном оформлении.
+:::
+
+::::
+
+
+#### Default {#debug-callout-default}
+
+Строго говоря, не является стандартным, так как не доступен автоматически, но чуть пофикшен, чтобы тоже можно было полноценно использовать.
+
+:::{.callout appearance="default" collapse=false title="Заголовок дефолтного коллаута"}
+Некоторый текст для дефолтного коллаута в дефолтном оформлении.
+:::
+
+:::{.callout appearance="simple" collapse=false title="Заголовок дефолтного коллаута"}
+Некоторый текст для дефолтного коллаута в простом оформлении.
+
+У дефолтного колаута нет иконки, поэтому минимальное оформление будет совпадать с простым.
+:::
+
+
+
+### Кастомные колауты {#debug-callout-custom}
+
+Сделаны на базе `.callout-note` с помощью задания стилей через кастомный класс и подключения `crossref custom`.
+
+
+#### History {#debug-callout-history}
+
+Должен работать кроссреф на @hst-debug-id и @hst-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-note .history}
+Это история без заголовка и без id.
+:::
+
+:::{.callout-note .history #hst-debug-id}
+Это история без заголовка, но с id.
+:::
+
+:::{.callout-note .history title="Заголовок истории"}
+Это история с заголовком, но без id.
+:::
+
+:::{.callout-note .history #hst-debug-title-id title="Заголовок истории"}
+Это история с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-history-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-note .history appearance="default" collapse=false title="Заголовок истории"}
+Это развернутая история с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .history appearance="default" collapse=true title="Заголовок истории"}
+Это свернутая история с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .history appearance="simple" collapse=false title="Заголовок истории"}
+Это развернутая история с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .history appearance="simple" collapse=true title="Заголовок истории"}
+Это свернутая история с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .history appearance="minimal" collapse=false title="Заголовок истории"}
+Это развернутая история с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-note .history appearance="minimal" collapse=true title="Заголовок истории"}
+Это свернутая история с заголовком в минимальном оформлении.
+:::
+
+::::
+
+
+#### Person {#debug-callout-person}
+
+Должен работать кроссреф на @prs-debug-id и @prs-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-note .person}
+Это личность без заголовка и без id.
+:::
+
+:::{.callout-note .person #prs-debug-id}
+Это личность без заголовка, но с id.
+:::
+
+:::{.callout-note .person title="Заголовок личности"}
+Это личность с заголовком, но без id.
+:::
+
+:::{.callout-note .person #prs-debug-title-id title="Заголовок личности"}
+Это личность с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-person-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-note .person appearance="default" collapse=false title="Заголовок личности"}
+Это развернутая личность с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .person appearance="default" collapse=true title="Заголовок личности"}
+Это свернутая личность с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .person appearance="simple" collapse=false title="Заголовок личности"}
+Это развернутая личность с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .person appearance="simple" collapse=true title="Заголовок личности"}
+Это свернутая личность с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .person appearance="minimal" collapse=false title="Заголовок личности"}
+Это развернутая личность с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-note .person appearance="minimal" collapse=true title="Заголовок личности"}
+Это свернутая личность с заголовком в минимальном оформлении.
+:::
+
+::::
+
+
+#### Dataset {#debug-callout-dataset}
+
+Должен работать кроссреф на @dts-debug-id и @dts-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-note .dataset}
+Это датасет без заголовка и без id.
+:::
+
+:::{.callout-note .dataset #dts-debug-id}
+Это датасет без заголовка, но с id.
+:::
+
+:::{.callout-note .dataset title="Заголовок датасета"}
+Это датасет с заголовком, но без id.
+:::
+
+:::{.callout-note .dataset #dts-debug-title-id title="Заголовок датасета"}
+Это датасет с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-dataset-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-note .dataset appearance="default" collapse=false title="Заголовок датасета"}
+Это развернутый датасет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .dataset appearance="default" collapse=true title="Заголовок датасета"}
+Это свернутый датасет с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .dataset appearance="simple" collapse=false title="Заголовок датасета"}
+Это развернутый датасет с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .dataset appearance="simple" collapse=true title="Заголовок датасета"}
+Это свернуты датасет с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .dataset appearance="minimal" collapse=false title="Заголовок датасета"}
+Это развернутый датасет с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-note .dataset appearance="minimal" collapse=true title="Заголовок датасета"}
+Это свернутый датасет с заголовком в минимальном оформлении.
+:::
+
+::::
+
+#### Myth {#debug-callout-myth}
+
+Должен работать кроссреф на @mth-debug-id и @mth-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-note .myth}
+Это миф без заголовка и без id.
+:::
+
+:::{.callout-note .myth #mth-debug-id}
+Это миф без заголовка, но с id.
+:::
+
+:::{.callout-note .myth title="Заголовок мифа"}
+Это миф с заголовком, но без id.
+:::
+
+:::{.callout-note .myth #mth-debug-title-id title="Заголовок мифа"}
+Это миф с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-myth-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-note .myth appearance="default" collapse=false title="Заголовок мифа"}
+Это развернутый миф с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .myth appearance="default" collapse=true title="Заголовок мифа"}
+Это свернутый миф с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .myth appearance="simple" collapse=false title="Заголовок мифа"}
+Это развернутый миф с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .myth appearance="simple" collapse=true title="Заголовок мифа"}
+Это свернуты миф с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .myth appearance="minimal" collapse=false title="Заголовок мифа"}
+Это развернутый миф с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-note .myth appearance="minimal" collapse=true title="Заголовок мифа"}
+Это свернутый миф с заголовком в минимальном оформлении.
+:::
+
+::::
+
+
+#### Case {#debug-callout-case}
+
+Должен работать кроссреф на @cse-debug-id и @cse-debug-title-id.
+
+::::{layout-ncol=2}
+
+:::{.callout-note .case}
+Это кейс без заголовка и без id.
+:::
+
+:::{.callout-note .case #cse-debug-id}
+Это кейс без заголовка, но с id.
+:::
+
+:::{.callout-note .case title="Заголовок кейса"}
+Это кейс с заголовком, но без id.
+:::
+
+:::{.callout-note .case #cse-debug-title-id title="Заголовок кейса"}
+Это кейс с заголовком и с id.
+:::
+
+::::
+
+##### Стилевые варианты {#debug-callout-case-appearance}
+
+::::{layout-ncol=2}
+
+:::{.callout-note .case appearance="default" collapse=false title="Заголовок кейса"}
+Это развернутый кейс с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .case appearance="default" collapse=true title="Заголовок кейса"}
+Это свернутый кейс с заголовком в дефолтном оформлении.
+:::
+
+:::{.callout-note .case appearance="simple" collapse=false title="Заголовок кейса"}
+Это развернутый кейс с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .case appearance="simple" collapse=true title="Заголовок кейса"}
+Это свернуты кейс с заголовком в простом оформлении.
+:::
+
+:::{.callout-note .case appearance="minimal" collapse=false title="Заголовок кейса"}
+Это развернутый кейс с заголовком в минимальном оформлении.
+:::
+
+:::{.callout-note .case appearance="minimal" collapse=true title="Заголовок кейса"}
+Это свернутый кейс с заголовком в минимальном оформлении.
+:::
+
+::::

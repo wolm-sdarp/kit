@@ -1,0 +1,88 @@
+title: WoLM SDARP Style Kit
+author: Anton Angelgardt
+version: 0.1.0-dev
+quarto-required: ">=1.9.37"
+contributes:
+  formats:
+    # ── Общее для всех форматов расширения (сейчас — только html; позже typst) ──
+    common:
+      csl: shared/refs/apa.csl
+      filters:
+        - path: shared/filters/capitalize.lua
+          at: pre-quarto
+        - shared/filters/wolm.lua
+        - path: shared/filters/solution.lua
+          at: post-render
+      crossref:
+        chapters: true
+        custom:
+          - key: mth
+            kind: float
+            reference-prefix: "Myth"
+            caption-prefix: "Myth"
+          - key: hst
+            kind: float
+            reference-prefix: "History"
+            caption-prefix: "History"
+          - key: prs
+            kind: float
+            reference-prefix: "Person"
+            caption-prefix: "Person"
+          - key: dts
+            kind: float
+            reference-prefix: "Dataset"
+            caption-prefix: "Dataset"
+          - key: cse
+            kind: float
+            reference-prefix: "Case"
+            caption-prefix: "Case"
+          - key: sch
+            kind: float
+            reference-prefix: "Scheme"
+            caption-prefix: "Scheme"
+          - key: vid
+            kind: float
+            reference-prefix: "Video"
+            caption-prefix: "Video"
+      # Настройки kit. Книга/сайт может переопределить любой ключ в своём _quarto.yml
+      # или через metadata-files (см. shared/lang/_meta-*.yml).
+      wolm:
+        fonts: google          # google | local
+        level-filter: false    # true — кнопки фильтра разделов по уровням
+        capitalize-h1: true    # заглавная первая буква в h1 и в title (код и цифры не трогаются)
+        labs:
+          novice: "Novice"
+          junior: "Junior"
+          middle: "Middle"
+          senior: "Senior"
+          expert: "Expert"
+        strings:
+          solution-show: "Show"       # подсказка у свёрнутого решения (.solution .folded)
+          solution-hide: "Hide"
+          level-filter-label: "Filter sections by level"
+          # Тексты баннера версии (website.announcement, см. README «Баннер версии»)
+          release-alpha: "This **alpha** version is under active development and may be unstable."
+          release-beta: "This **beta** version is currently under testing and may contain incomplete content."
+
+    # ── HTML: книги и сайты ──
+    html:
+      theme:
+        light:
+          - html/scss/light.scss
+          - html/scss/common.scss
+        dark:
+          - html/scss/dark.scss
+          - html/scss/common.scss
+      include-in-header:
+        - html/includes/brackets-thickness-fix.html
+      grid:
+        margin-width: 450px
+        body-width: 900px
+        gutter-width: 2em
+      toc: true
+      toc-depth: 4
+      lightbox: true
+
+    # ── Typst: зарезервировано (см. typst/README.md) ──
+    # typst:
+    #   font-paths: [fonts/ttf]
