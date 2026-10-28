@@ -2,7 +2,11 @@
 
 Формат — [Keep a Changelog](https://keepachangelog.com/ru/1.1.0/), версии — [SemVer](https://semver.org/lang/ru/).
 
-## [Unreleased] — 0.1.0-dev
+## [Unreleased]
+
+## [0.1.0] — 2026-10-28
+
+Первый выпуск: стилевой комплект перенесён из исходников проекта в Quarto extension, только HTML.
 
 ### Added
 
@@ -46,3 +50,10 @@
 
 - `wolm.strings.solution-toggle` («Управляшка»), CSS-переменная `--wolm-solution-toggle` и правило `.solution.folded p:first-child::after` — заменены сворачиваемыми решениями (#21).
 - Ключ `math-macros` из конфигурации книг: Quarto его не поддерживает. Макросы `\setN`, `\setNo`, `\setZp` есть в `math-symbols.qmd`.
+
+[Unreleased]: https://github.com/wolm-sdarp/kit/compare/v0.1.0...dev
+[0.1.0]: https://github.com/wolm-sdarp/kit/releases/tag/v0.1.0
+
+---
+
+Сгенерировано LLM (Claude Opus 5.5), человеком не редактировалось.

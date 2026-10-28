@@ -11,19 +11,19 @@ abstract: "Тут можно написать аннотацию к главе"
 
 Это блок образовательных целей --- «что вы узнаете»:
 
-На уровне {{< meta labs.novice >}}
+На уровне {{< meta wolm.labs.novice >}}
 
 - objective 1
 - objective 2
 - objective 3
 
-На уровне {{< meta labs.junior >}}
+На уровне {{< meta wolm.labs.junior >}}
 
 - objective 1
 - objective 2
 - objective 3
 
-На уровне {{< meta labs.expert >}}
+На уровне {{< meta wolm.labs.expert >}}
 
 - objective 1
 - objective 2
@@ -35,19 +35,19 @@ abstract: "Тут можно написать аннотацию к главе"
 
 Это блок образовательных результатов --- «чему вы научитесь»:
 
-На уровне {{< meta labs.junior >}}
+На уровне {{< meta wolm.labs.junior >}}
 
 - outcome 1
 - outcome 2
 - outcome 3
 
-На уровне {{< meta labs.middle >}}
+На уровне {{< meta wolm.labs.middle >}}
 
 - outcome 1
 - outcome 2
 - outcome 3
 
-На уровне {{< meta labs.senior >}}
+На уровне {{< meta wolm.labs.senior >}}
 
 - outcome 1
 - outcome 2

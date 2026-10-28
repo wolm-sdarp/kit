@@ -101,8 +101,8 @@ Pijamalı hasta yağız şoföre çabucak güvendi (tr). Înjurând pițigăiat,
 
 | Тип    | Кроссреф |
 |:-------|:---------|
-| Глава (Chapter)            | @sec-debug |
-| Раздел (Section)           | @sec-debug-text |
+| Глава (Chapter)            | @sec-text |
+| Раздел (Section)           | @sec-debug-callout |
 | Приложение (Appendix)      | @sec-apx-debug |
 | Заметка (Note)             | @nte-debug-id |
 | Совет (Tip)                | @tip-debug-id |
