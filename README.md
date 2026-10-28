@@ -58,7 +58,7 @@ format:
 | `wolm.level-filter` | `false` | `true` — кнопки фильтра разделов по уровням под заголовком страницы |
 | `wolm.capitalize-h1` | `true` | Заглавная первая буква в заголовках h1 и в `title`. Код, формулы и цифры в начале не трогаются; номер главы, кавычки и скобки пропускаются. Боковое меню и навигация книги берут заголовки глав прямо из исходников, до фильтров, — там регистр остаётся как в тексте |
 | `wolm.labs.<уровень>` | `Novice` … `Expert` | Текст лейбла уровня (`_meta-rd.yml` — дореформенные названия) |
-| `wolm.strings.solution-toggle` | `Управляшка` | Подпись у свёрнутого решения (`.solution.folded`) |
+| `wolm.strings.solution-show`, `wolm.strings.solution-hide` | `Show`, `Hide` | Подсказка у свёрнутого решения (`.solution .folded`): «Развернуть» / «Свернуть» в `ru` и `rd` |
 | `wolm.strings.level-filter-label` | `Filter sections by level` | `aria-label` группы кнопок фильтра |
 | `wolm.strings.release-alpha`, `wolm.strings.release-beta` | английский текст | Текст баннера версии (см. ниже); `ru`, `rd`, `en` — в `_meta-*.yml` |
 
@@ -74,7 +74,7 @@ format:
 | `#mth-`, `#hst-`, `#prs-`, `#dts-`, `#cse-`, `#sch-`, `#vid-` | Нумеруемые кастомные float-блоки (миф, история, персона, датасет, кейс, схема, видео) |
 | `::::{.intro}` | Введение к главе |
 | `:::{.blockquote}` с подписью `> Имя Фамилия. [Источник, год]` в конце | Цитата с подписью: подпись справа, перед ней тире |
-| `.proof .solution .folded` | Свёрнутое решение с подписью `wolm.strings.solution-toggle` |
+| `::: {.solution .folded}`, `::: {#sol-… .folded}` | Решение, свёрнутое по умолчанию: раскрывается кликом, Enter или пробелом (`<details>`, без JS). В других форматах — развёрнуто |
 | `#thm-`, `#lem-`, `.proof` … | Теоремы и доказательства в рамке |
 
 ### Баннер версии (alpha/beta)
@@ -109,6 +109,7 @@ _extensions/wolm-sdarp/kit/
 ├── shared/
 │   ├── filters/
 │   │   ├── capitalize.lua  # заглавная буква в h1 и title (pre-quarto, все форматы)
+│   │   ├── solution.lua    # HTML: свёрнутые решения .solution .folded (post-render)
 │   │   └── wolm.lua        # HTML: шрифты, CSS-переменные с текстами, фильтр уровней
 │   ├── lang/             # _lang-ru/rd.yml (интерфейс Quarto), _meta-ru/rd.yml (тексты kit)
 │   ├── math/             # math-symbols.qmd

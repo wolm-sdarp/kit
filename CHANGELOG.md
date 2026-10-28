@@ -6,6 +6,7 @@
 
 ### Added
 
+- Сворачиваемые решения `::: {.solution .folded}` (и нумерованные `#sol-… .folded`): фильтр `shared/filters/solution.lua` (`at: post-render`) оборачивает содержимое в `<details>` — работает без JS, с клавиатуры; подсказка `wolm.strings.solution-show/hide`; в других форматах блок не меняется (#21).
 - Баннер версии alpha/beta под навбаром в стиле колаутов: оформление `website.announcement` (`html/scss/partials/_announcement.scss`), тексты `wolm.strings.release-alpha/beta` для `en`, `ru`, `rd`, профили `book-kit/_quarto-alpha.yml` и `_quarto-beta.yml`.
 - Расширение `kit` (`_extensions/wolm-sdarp/kit/`) с форматом `kit-html` для книг и сайтов.
 - Бренд `brand/light.yml` и `brand/dark.yml`: палитра из 28 цветов, фон и текст, семантические цвета, назначение шрифтов.
@@ -42,4 +43,5 @@
 
 ### Removed
 
+- `wolm.strings.solution-toggle` («Управляшка»), CSS-переменная `--wolm-solution-toggle` и правило `.solution.folded p:first-child::after` — заменены сворачиваемыми решениями (#21).
 - Ключ `math-macros` из конфигурации книг: Quarto его не поддерживает. Макросы `\setN`, `\setNo`, `\setZp` есть в `math-symbols.qmd`.
