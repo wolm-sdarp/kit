@@ -57,6 +57,11 @@ $border-color: $gray-300;
 $navbar-bg: $black !default;
 $navbar-fg: $gray-100 !default;
 
+// Code
+// Комментарии в коде прямые (см. partials/_elements.scss). В светлой теме Quarto уже выделяет
+// их серым цветом, null — оставить цвет темы подсветки.
+$code-comment-color: null !default;
+
 // Level labels
 $lab-novice-color: $yellow-soft !default;
 $lab-junior-color: $teal-soft !default;

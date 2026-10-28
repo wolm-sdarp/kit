@@ -65,6 +65,11 @@ $nav-tabs-link-active-border-color: $border-color $border-color transparent !def
 $navbar-bg: $black !default;
 $navbar-fg: $gray-900 !default;
 
+// Code
+// Комментарии в коде прямые (см. partials/_elements.scss). В тёмной теме подсветки Quarto
+// (arrow-dark) комментарий отличается от кода только курсивом — даём ему серый цвет.
+$code-comment-color: $gray-500 !default;
+
 // Level labels
 $lab-novice-color: $yellow-soft !default;
 $lab-junior-color: $teal-soft !default;

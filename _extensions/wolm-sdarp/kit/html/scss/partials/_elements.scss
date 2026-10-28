@@ -67,6 +67,20 @@ div.cell div[data-code-fold="true"] {
   }
 }
 
+// Код всегда прямой: в Source Code Pro Italic нет кириллицы, и курсивный комментарий
+// собирался из двух шрифтов (#22). Темы подсветки Quarto ставят курсив на span (.co, .do,
+// .cv, .wa и др.) — селектор с [class] и html сильнее их `code span.co`. Прямой и инлайн-код
+// внутри курсивного текста (em, подписи, теоремы).
+code,
+html code span[class] {
+  font-style: normal;
+}
+@if $code-comment-color {
+  html code span:is(.co, .do) {
+    color: $code-comment-color;
+  }
+}
+
 // Введение к главе
 .intro {
   padding-left: 1rem;
