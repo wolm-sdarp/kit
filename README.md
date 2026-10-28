@@ -56,9 +56,11 @@ format:
 |---|---|---|
 | `wolm.fonts` | `google` | `google` — шрифты из Google Fonts, локальная копия как запасной вариант; `local` — только локальная копия, без запросов к Google |
 | `wolm.level-filter` | `false` | `true` — кнопки фильтра разделов по уровням под заголовком страницы |
+| `wolm.capitalize-h1` | `true` | Заглавная первая буква в заголовках h1 и в `title`. Код, формулы и цифры в начале не трогаются; номер главы, кавычки и скобки пропускаются. Боковое меню и навигация книги берут заголовки глав прямо из исходников, до фильтров, — там регистр остаётся как в тексте |
 | `wolm.labs.<уровень>` | `Novice` … `Expert` | Текст лейбла уровня (`_meta-rd.yml` — дореформенные названия) |
 | `wolm.strings.solution-toggle` | `Управляшка` | Подпись у свёрнутого решения (`.solution.folded`) |
 | `wolm.strings.level-filter-label` | `Filter sections by level` | `aria-label` группы кнопок фильтра |
+| `wolm.strings.release-alpha`, `wolm.strings.release-beta` | английский текст | Текст баннера версии (см. ниже); `ru`, `rd`, `en` — в `_meta-*.yml` |
 
 ### Классы и блоки (контракт)
 
@@ -71,9 +73,27 @@ format:
 | `:::{.callout-none}` | Нейтральный колаут |
 | `#mth-`, `#hst-`, `#prs-`, `#dts-`, `#cse-`, `#sch-`, `#vid-` | Нумеруемые кастомные float-блоки (миф, история, персона, датасет, кейс, схема, видео) |
 | `::::{.intro}` | Введение к главе |
-| `:::{.blockquote}` | Цитата с подписью |
+| `:::{.blockquote}` с подписью `> Имя Фамилия. [Источник, год]` в конце | Цитата с подписью: подпись справа, перед ней тире |
 | `.proof .solution .folded` | Свёрнутое решение с подписью `wolm.strings.solution-toggle` |
 | `#thm-`, `#lem-`, `.proof` … | Теоремы и доказательства в рамке |
+
+### Баннер версии (alpha/beta)
+
+Под навбаром выводится предупреждение о версии. Это встроенный баннер Quarto (`website.announcement`), kit оформляет его в стиле колаутов. Баннер включается профилем Quarto: в стабильной сборке профиля нет, и баннера тоже нет.
+
+`_quarto-alpha.yml` в корне книги или сайта:
+
+```yaml
+website:          # и в книгах тоже website:, а не book: — book.announcement Quarto 1.9.37 игнорирует
+  announcement:
+    content: "{{< meta wolm.strings.release-alpha >}}"
+    type: warning               # beta: info; цвет берётся из колаутов (warning, note, tip, important…)
+    icon: exclamation-triangle  # beta: info-circle; иконки Bootstrap Icons
+    dismissable: false
+    position: below-navbar
+```
+
+Сборка: `quarto render --profile alpha` (или `beta`). Профили можно совмещать с языковыми: `--profile alpha,ru`. Готовые профили — в `book-kit/_quarto-alpha.yml` и `_quarto-beta.yml`. Текст берётся из `wolm.strings.release-*` и переводится вместе с остальными строками kit. Ссылку на стабильную версию можно дописать прямо в `content`.
 
 ## Устройство расширения
 
@@ -87,7 +107,9 @@ _extensions/wolm-sdarp/kit/
 │   ├── includes/         # brackets-thickness-fix.html
 │   └── js/               # level-filter.js
 ├── shared/
-│   ├── filters/wolm.lua  # шрифты, CSS-переменные с текстами, фильтр уровней
+│   ├── filters/
+│   │   ├── capitalize.lua  # заглавная буква в h1 и title (pre-quarto, все форматы)
+│   │   └── wolm.lua        # HTML: шрифты, CSS-переменные с текстами, фильтр уровней
 │   ├── lang/             # _lang-ru/rd.yml (интерфейс Quarto), _meta-ru/rd.yml (тексты kit)
 │   ├── math/             # math-symbols.qmd
 │   └── refs/apa.csl
@@ -103,6 +125,7 @@ _extensions/wolm-sdarp/kit/
 - **Палитра лежит в двух местах**: `brand/<тема>.yml` и `html/scss/<тема>.scss`. После изменения цветов запусти `Rscript scripts/check-palette.R`.
 - В `html/scss/partials/` только правила. Переменные объявляются в `light.scss`, `dark.scss` и `common.scss`, иначе Quarto выдаёт ложное предупреждение «variable used before declaration».
 - В `theme:` внутри `_extension.yml` слово `brand` не пишется: в расширении Quarto считает его путём к файлу.
+- `$gray-300`, `$gray-500`, `$gray-600`, `$gray-800` и `$border-color` задаются **без `!default`**. Quarto 1.9.37 объявляет их раньше наших файлов, поэтому значение с `!default` молча игнорируется.
 
 ## Работа со стендами
 
