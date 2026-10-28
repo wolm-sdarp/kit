@@ -1,5 +1,16 @@
 # Код {#sec-debug-code}
 
+
+## Инлайн код
+
+Это текст, в котором встречается упоминание пакета `stringr`, а также вызова функции из него `stringr::str_detect(x, pattern)`.
+
+Ещё примеры с кириллицей: `stringr::str_remove_all(x, pattern = "буквы", replacement = "цифры")`.
+
+
+
+## Код с кроссрефом
+
 ```{r}
 #| label: chunk-name
 #| lst-label: lst-debug
@@ -8,6 +19,19 @@
 
 (1:10) %*% t(10:1)
 ```
+
+
+## Комментарии
+
+```{r}
+## неподписанный чанк с кириллическими комментарием
+## and with english comment as well
+
+print("unnamed chunk"); print("чанк без имени")
+```
+
+
+## Пояснения
 
 ```{r}
 #| label: debug-code-annotated

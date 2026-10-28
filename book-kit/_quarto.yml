@@ -14,13 +14,17 @@ book:
   favicon: img/favicon.png
   navbar:
     left:
-      - text: "Book0"
+      - text: "Book I"
         href: ""
-      - text: "BookI"
-        href: ""
-      - text: "BookII"
+      - text: "Book II"
         href: ""
       - text: "BookIII"
+        href: ""
+      - text: "BookIV"
+        href: ""
+      - text: "BookV"
+        href: ""
+      - text: "BookVI"
         href: ""
       - text: "Tests"
         href: ""
@@ -31,6 +35,7 @@ book:
     - index.qmd
     - part: part.qmd
       chapters:
+        - authors.qmd
         - text.qmd
         - level-labs.qmd
         - callouts.qmd

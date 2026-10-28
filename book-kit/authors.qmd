@@ -1,0 +1,17 @@
+---
+title: Авторы
+author:
+  - name: Антон Ангельгардт
+    email: anton.angelgardt@gmail.com
+    url: https://github.com/angelgardt
+    orcid: 0000-0003-0395-9586
+    role: author
+  - name: Name Surname
+    orcid: 0000-0003-0395-9586
+    role: reviewer
+  - name: FirstName Lastname
+    url: https://github.com/angelgardt
+    role: editor
+abstract-title: "Абстракт"
+abstract: "Здесь тестируется отображение авторов из YAML-шапки"
+---
