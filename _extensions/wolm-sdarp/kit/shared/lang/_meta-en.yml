@@ -10,3 +10,5 @@ wolm:
   strings:
     solution-toggle: "Toggle"
     level-filter-label: "Filter sections by level"
+    release-alpha: "This **alpha** version is under active development and may be unstable."
+    release-beta: "This **beta** version is currently under testing and may contain incomplete content."

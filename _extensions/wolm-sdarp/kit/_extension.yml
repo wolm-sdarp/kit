@@ -57,6 +57,9 @@ contributes:
         strings:
           solution-toggle: "Управляшка"
           level-filter-label: "Filter sections by level"
+          # Тексты баннера версии (website.announcement, см. README «Баннер версии»)
+          release-alpha: "This **alpha** version is under active development and may be unstable."
+          release-beta: "This **beta** version is currently under testing and may contain incomplete content."
 
     # ── HTML: книги и сайты ──
     html:

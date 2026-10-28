@@ -1,0 +1,44 @@
+// Баннер под навбаром (Quarto: website.announcement) в стиле колаутов:
+// толстая цветная полоса слева, подкрашенный фон как у заголовка колаута, цветная иконка.
+// Тип баннера (`type:`) сопоставлен с цветами колаутов.
+// Только правила: переменные — в light/dark/common.scss.
+
+$wolm-announcement-colors: (
+  "primary":   $callout-color-note,
+  "info":      $callout-color-note,
+  "success":   $callout-color-tip,
+  "warning":   $callout-color-warning,
+  "danger":    $callout-color-important,
+  "secondary": $callout-color-none,
+  "light":     $callout-color-none,
+  "dark":      $callout-color-none,
+);
+
+#quarto-announcement {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  border-left: $callout-border-width solid;
+  border-bottom: 1px solid $border-color;
+  padding: .45em 1em;
+  align-items: center;
+  font-family: $font-family-sans-serif;
+  font-size: .95rem;
+  color: $body-color;
+
+  .quarto-announcement-content {
+    p { margin-bottom: 0; }
+    strong { font-family: $font-family-heading; font-weight: 600; }
+    a { color: inherit; text-decoration: underline; }
+  }
+  .quarto-announcement-action { color: $body-color; opacity: .7; }
+  .quarto-announcement-action:hover { opacity: 1; }
+
+  @each $type, $color in $wolm-announcement-colors {
+    &.alert-#{$type} {
+      background-color: shift-color($color, $callout-header-scale);
+      border-left-color: $color;
+      .quarto-announcement-icon { color: $color; }
+    }
+  }
+}
