@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: _site
+  preview:
+    port: 5052
+
+lang: ru
+
+website:
+  title: "Style Kit: Site"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - components.qmd
+      - about.qmd
+
+# ── WoLM SDARP style kit ──
+# Расширение подключено симлинком site-kit/_extensions -> ../_extensions (scripts/link-ext.sh).
+brand:
+  light: _extensions/wolm-sdarp/kit/brand/light.yml
+  dark: _extensions/wolm-sdarp/kit/brand/dark.yml
+
+language: _extensions/wolm-sdarp/kit/shared/lang/_lang-ru.yml
+metadata-files:
+  - _extensions/wolm-sdarp/kit/shared/lang/_meta-ru.yml
+
+format:
+  kit-html:
+    css: styles.css

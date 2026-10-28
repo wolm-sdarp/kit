@@ -1,0 +1,10 @@
+# Профиль «alpha»: баннер версии под навбаром. Сборка: quarto render --profile alpha
+# Текст — wolm.strings.release-alpha (_meta-ru/rd/en.yml); стиль — html/scss/partials/_announcement.scss.
+# В проекте-книге баннер задаётся в website:, не в book: (book.announcement Quarto 1.9.37 игнорирует).
+website:
+  announcement:
+    content: "{{< meta wolm.strings.release-alpha >}}"
+    type: warning
+    icon: exclamation-triangle
+    dismissable: false
+    position: below-navbar

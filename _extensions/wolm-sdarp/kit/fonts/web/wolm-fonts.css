@@ -1,0 +1,10 @@
+/* WoLM SDARP — локальная копия шрифтов (variable woff2, latin + latin-ext + cyrillic + cyrillic-ext).
+   Объявлены под отдельными именами "… WLM", чтобы не конфликтовать с Google Fonts:
+   браузер скачивает их, только если шрифт из Google не загрузился (или wolm.fonts: local).
+   Лицензия шрифтов: SIL Open Font License 1.1 (../licenses). */
+@font-face { font-family: "Open Sans WLM"; src: url("OpenSans.woff2") format("woff2"); font-weight: 300 800; font-stretch: 75% 100%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Open Sans WLM"; src: url("OpenSans-Italic.woff2") format("woff2"); font-weight: 300 800; font-stretch: 75% 100%; font-style: italic; font-display: swap; }
+@font-face { font-family: "Montserrat WLM"; src: url("Montserrat.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat WLM"; src: url("Montserrat-Italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+@font-face { font-family: "Source Code Pro WLM"; src: url("SourceCodePro.woff2") format("woff2"); font-weight: 200 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Source Code Pro WLM"; src: url("SourceCodePro-Italic.woff2") format("woff2"); font-weight: 200 900; font-style: italic; font-display: swap; }

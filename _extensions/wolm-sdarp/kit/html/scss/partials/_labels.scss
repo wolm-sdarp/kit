@@ -1,0 +1,29 @@
+// Лейблы уровней (Novice … Expert) на заголовках разделов.
+// Текст лейбла — CSS-переменные --wolm-lab-*, их задаёт фильтр shared/filters/wolm.lua
+// из метаданных wolm.labs (так текст локализуется и не зашит в CSS).
+// Только правила: переменные — в light/dark/common.scss.
+
+$wolm-lab-levels: novice, junior, middle, senior, expert;
+
+@for $i from $lab-heading-highest through $lab-heading-lowest {
+  @each $lvl in $wolm-lab-levels {
+    h#{$i}.lab-#{$lvl}:first-child::after {
+      display: block;
+      width: fit-content;
+      border: solid 1px;
+      border-radius: .25rem;
+      padding: 0 .3rem .1rem .3rem;
+      margin-top: .2rem;
+      font-family: $font-family-labs;
+      font-size: 1rem;
+      font-variant-caps: all-small-caps;
+      content: var(--wolm-lab-#{$lvl});
+    }
+  }
+}
+
+.lab-novice:first-child::after { background-color: $lab-novice-color; color: color-contrast($lab-novice-color); }
+.lab-junior:first-child::after { background-color: $lab-junior-color; color: color-contrast($lab-junior-color); }
+.lab-middle:first-child::after { background-color: $lab-middle-color; color: color-contrast($lab-middle-color); }
+.lab-senior:first-child::after { background-color: $lab-senior-color; color: color-contrast($lab-senior-color); }
+.lab-expert:first-child::after { background-color: $lab-expert-color; color: color-contrast($lab-expert-color); }

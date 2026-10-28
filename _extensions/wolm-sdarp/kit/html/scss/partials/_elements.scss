@@ -1,0 +1,112 @@
+// Теоремы, доказательства, решения, свёрнутый код, введение, цитаты.
+
+// Рамка для теорем и доказательств
+.theorem, .proof {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0.35rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding: .5rem;
+}
+
+// Свёрнутое решение: ::: {.solution .folded} → <details class="wolm-solution"> внутри .proof
+// (shared/filters/solution.lua). Подсказка справа — --wolm-solution-show/hide из wolm.strings,
+// шеврон — как у сворачиваемых колаутов.
+details.wolm-solution {
+  margin-bottom: 0;                   // Quarto даёт details отступ 1em
+  > :last-child { margin-bottom: 0; }
+  > summary {
+    color: $body-color;               // Quarto красит details > summary в приглушённый цвет
+    display: flex;
+    align-items: baseline;
+    gap: .5em;
+    cursor: pointer;
+    list-style: none;
+    &::-webkit-details-marker { display: none; }
+    &::before {
+      order: 2;
+      margin-left: auto;
+      content: var(--wolm-solution-show);
+      font-size: .85em;
+      opacity: .75;
+    }
+    &::after {
+      order: 3;
+      content: "";
+      align-self: center;
+      width: .9em;
+      height: .9em;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#{colorToRGB($body-color)}" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+      transform: rotate(-90deg);
+      transition: transform .15s ease-in-out;
+    }
+    &:hover::before { opacity: 1; }
+    &:focus-visible {
+      outline: 2px solid $primary;
+      outline-offset: 2px;
+      border-radius: .2rem;
+    }
+  }
+  &[open] > summary {
+    margin-bottom: .5rem;
+    &::before { content: var(--wolm-solution-hide); }
+    &::after { transform: none; }
+  }
+}
+
+// Уменьшенная подпись у свёрнутого кода
+div.cell div[data-code-fold="true"] {
+  figcaption.quarto-float-lst {
+    font-size: .7em;
+  }
+  summary {
+    font-size: .7em;
+  }
+}
+
+// Код всегда прямой: в Source Code Pro Italic нет кириллицы, и курсивный комментарий
+// собирался из двух шрифтов (#22). Темы подсветки Quarto ставят курсив на span (.co, .do,
+// .cv, .wa и др.) — селектор с [class] и html сильнее их `code span.co`. Прямой и инлайн-код
+// внутри курсивного текста (em, подписи, теоремы).
+code,
+html code span[class] {
+  font-style: normal;
+}
+@if $code-comment-color {
+  html code span:is(.co, .do) {
+    color: $code-comment-color;
+  }
+}
+
+// Введение к главе
+.intro {
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: solid 1px;
+}
+
+// Цитата с подписью. Разметка:
+//   :::{.blockquote}
+//   Текст цитаты (один или несколько абзацев).
+//
+//   > Имя Фамилия. [Источник, год]
+//   :::
+// Подпись — вложенная цитата `>`: выравнивается вправо, перед ней одно тире.
+// Тире одинаковое для всех языков, поэтому задано здесь, а не в метаданных.
+div.blockquote {
+  padding: .625rem 1.25rem;
+  border-left-width: .25rem;
+  border-left-style: solid;
+  blockquote.blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: right;
+    > :first-child::before {
+      content: "— ";
+    }
+  }
+}

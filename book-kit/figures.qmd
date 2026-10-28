@@ -1,0 +1,157 @@
+# Иллюстрации {#sec-debug-illustration}
+
+### Графики
+
+```{r}
+#| label: debug-code-figure-margin
+#| lst-label: lst-debug-code-figure-margin
+#| lst-cap: "Код построения графика (ненумерованного)"
+#| fig-cap: "Ненумерованная визуализация, построенная через код и вынесенная на поля"
+#| code-fold: true
+#| fig-column: margin
+
+set.seed(123)
+plot1 <- plot(rnorm(100), rnorm(100))
+```
+
+
+```{r}
+#| label: fig-debug
+#| lst-label: lst-debug-code-figure
+#| lst-cap: "Код построения графика (нумерованного)"
+#| fig-cap: "Нумерованная визуализация, построенная кодом"
+#| warning: false
+#| message: false
+#| code-fold: true
+
+library(tidyverse)
+
+set.seed(321)
+n_col <- 10; n_row <- 30
+sample(x = 1:7, size = n_col * n_row, replace = TRUE) %>%
+  matrix(nrow = n_row) %>%
+  as_tibble() %>%
+  mutate(group = rep(c("group1", "group2"), each = n_row/2)) %>%
+  pivot_longer(cols = -group) %>%
+  ggplot() +
+  geom_histogram(aes(x = value, fill = group)) +
+  facet_wrap(~ name) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+
+### Диаграммы (Mermaid) {#debug-mermaid}
+
+See <https://quarto.org/docs/authoring/diagrams.html>
+
+:::{#sch-debug}
+```{mermaid}
+flowchart LR
+  A["Блок А"]
+  B["Блок Б"]
+  C["Блок Ц"]
+  
+  A --o B
+  B --o C
+```
+
+Схема `flowchart`а
+:::
+
+
+```{mermaid}
+gitGraph
+   commit
+   commit
+   branch develop
+   commit
+   commit
+   commit
+   checkout main
+   commit
+   commit
+   merge develop
+```
+
+
+### Рисунки {#debug-pics}
+
+:::{#fig-debug1}
+![Первая картинка](img/debug-pic.jpg){#fig-debug1-1}
+
+![Вторая картинка](img/debug-pic.jpg){#fig-debug1-2}
+
+Дебажные картинки в обычном лэйауте
+:::
+
+
+:::{#fig-debug2 layout-ncol=2}
+![Левая картинка](img/debug-pic.jpg){#fig-debug2-1}
+
+![Правая картинка](img/debug-pic.jpg){#fig-debug2-2}
+
+Дебажные картинки в лэйауте на 2 колонки
+:::
+
+
+### Карты
+
+```{r, echo=FALSE}
+#| label: fig-map-debug
+#| lst-label: lst-debug-map
+#| fig-cap: "Дебажная карта"
+#| code-fold: true
+
+library(leaflet)
+leaflet() %>%
+  addTiles() %>% 
+  # addProviderTiles(providers$Stadia.AlidadeSmooth) %>% 
+  addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
+```
+
+
+### Видео
+
+:::{#vid-debug}
+
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+
+Какое-то видео
+:::
+
+
+
+## Layouts {#sec-debug-layout}
+
+:::{.column-margin}
+![Дебажная картина. `.column-margin`](img/debug-pic.jpg)
+:::
+
+Здесь даны базовые лэйауты, чтобы проверить, что они работают в книге. Больше инфы см. <https://quarto.org/docs/authoring/article-layout.html>.
+
+Для чанков есть cell option `#| column: screen`.
+
+:::{.column-body}
+![Дебажная картина. `.column-body` (дефолт)](img/debug-pic.jpg)
+:::
+
+:::{.column-body-outset}
+![Дебажная картина. `.column-body-outset`](img/debug-pic.jpg)
+:::
+
+:::{.column-page}
+![Дебажная картина. `.column-page`](img/debug-pic.jpg)
+:::
+
+:::{.column-page-inset}
+![Дебажная картина. `.column-page-inset`](img/debug-pic.jpg)
+:::
+
+:::{.column-screen}
+![Дебажная картина. `.column-screen`](img/debug-pic.jpg)
+:::
+
+:::{.column-screen-inset}
+![Дебажная картина. `.column-screen-inset`](img/debug-pic.jpg)
+:::
